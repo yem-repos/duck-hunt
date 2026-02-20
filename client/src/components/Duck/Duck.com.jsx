@@ -22,6 +22,7 @@ export const Duck = () => {
     // const waitTimeoutRef = useRef(null);
     const quackRef = useRef(new Audio('/assets/sounds/quack.mp3'));
     const awpRef = useRef(new Audio('/assets/sounds/awp.mp3'));
+    const directionRef = useRef(1); // 1 | -1
 
     // Play awp sound
     const playAwp = () => {
@@ -55,6 +56,7 @@ export const Duck = () => {
         const startX = getRandomTileX(HALF_X);
         duckState.current = 'fly';
         startTimeRef.current = performance.now();
+        directionRef.current = Math.random() > 0.5 ? 1 : -1;
         // const startX = 1;
 
         // Set initial position
@@ -88,6 +90,15 @@ export const Duck = () => {
         const elapsedTime = time - startTimeRef.current;
         const progress = elapsedTime / duration;
         const frame = Math.floor(elapsedTime / 150) % 3;
+
+        const directionSwitchInterval = 1000;
+        const switchIndex = Math.floor(elapsedTime / directionSwitchInterval);
+
+        if (switchIndex % 2 === 0) {
+            directionRef.current = 1;
+        } else {
+            directionRef.current = -1;
+        }
         
         // Stop
         if (elapsedTime >= duration) {
@@ -99,12 +110,12 @@ export const Duck = () => {
         }
 
         // Calc X
-        const distanceX = (elapsedTime / duration) * HALF_X;
+        const distanceX = progress * HALF_X;
         const newX = startX + distanceX;
 
         // Calc Y
         const startY = TILES_Y - 2;
-        const distanceY = (elapsedTime / duration) * Math.floor(TILES_Y * 0.75); // ≈75% Height
+        const distanceY = progress * Math.floor(TILES_Y * 0.75); // ≈75% Height
         const newY = startY - distanceY;
 
         // Scale

@@ -5,4 +5,5 @@
   height: 100%;
   background-color: #808080;
   user-select: none;
+  cursor: url("/assets/images/crosshair.svg") 25 25, auto;
 }

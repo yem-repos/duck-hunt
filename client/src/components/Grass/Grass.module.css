@@ -1,0 +1,9 @@
+.Grass {
+    height: 93px;
+    width: 100%;
+    background-image: url("/assets/images/grass.webp");
+    background-repeat: repeat-x;
+    background-position: bottom;
+    position: absolute;
+    bottom: 0;
+}

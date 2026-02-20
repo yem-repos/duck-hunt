@@ -1,0 +1,13 @@
+.Tree {
+    --width: calc(69px * 2);
+    --height: calc(122px * 2);
+    width: var(--width);
+    height: var(--height);
+    background-image: url("/assets/images/tree.webp");
+    background-repeat: no-repeat;
+    background-size: var(--width) var(--height);
+    image-rendering: pixelated;
+    position: absolute;
+    bottom: 84px;
+    left: 84px;
+}

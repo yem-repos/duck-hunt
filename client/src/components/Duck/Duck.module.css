@@ -1,0 +1,15 @@
+.Duck {
+    --tile-x: 0;
+    --tile-y: 0;
+    --scale: 1;
+    --frame: 0;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: calc(32px * var(--tile-y));
+    left: calc(32px * var(--tile-x));
+    transform: scale(var(--scale));
+    background-image: url("/assets/images/duck.webp");
+    background-repeat: no-repeat;
+    background-position: calc(var(--frame) * -32px) 0;
+}

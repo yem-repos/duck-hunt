@@ -1,0 +1,30 @@
+.GameReadyOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #47c5ff80;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* StartButton */
+    .StartButton {
+        cursor: pointer;
+        font-size: 24px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #00ffff;
+        border: 2px solid #008080;
+        padding: 8px 16px;
+        transform: rotate(6deg);
+        border-radius: 3px;
+
+        /* Hover */
+        &:hover {
+            transform: rotate(-6deg);
+            color: #008080;
+            border: 2px solid #00ffff;
+        }
+    }
+}

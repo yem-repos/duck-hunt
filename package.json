@@ -1,0 +1,10 @@
+{
+  "name": "duck-hunt",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "client": "npm run dev --prefix client",
+    "server": "npm run start --prefix server"
+  }
+}

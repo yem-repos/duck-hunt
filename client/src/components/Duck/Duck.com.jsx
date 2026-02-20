@@ -22,7 +22,6 @@ export const Duck = () => {
     // const waitTimeoutRef = useRef(null);
     const quackRef = useRef(new Audio('/assets/sounds/quack.mp3'));
     const awpRef = useRef(new Audio('/assets/sounds/awp.mp3'));
-    const directionRef = useRef(1); // 1 | -1
 
     // Play awp sound
     const playAwp = () => {
@@ -56,7 +55,6 @@ export const Duck = () => {
         const startX = getRandomTileX(HALF_X);
         duckState.current = 'fly';
         startTimeRef.current = performance.now();
-        directionRef.current = Math.random() > 0.5 ? 1 : -1;
         // const startX = 1;
 
         // Set initial position
@@ -90,15 +88,6 @@ export const Duck = () => {
         const elapsedTime = time - startTimeRef.current;
         const progress = elapsedTime / duration;
         const frame = Math.floor(elapsedTime / 150) % 3;
-
-        const directionSwitchInterval = 1000;
-        const switchIndex = Math.floor(elapsedTime / directionSwitchInterval);
-
-        if (switchIndex % 2 === 0) {
-            directionRef.current = 1;
-        } else {
-            directionRef.current = -1;
-        }
         
         // Stop
         if (elapsedTime >= duration) {

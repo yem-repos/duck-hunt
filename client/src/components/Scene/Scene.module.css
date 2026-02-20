@@ -3,4 +3,5 @@
     height: 512px;
     background-color: #63ADFF;
     position: relative;
+    overflow: hidden;
 }

@@ -1,4 +1,4 @@
-import { Duck } from "@/components/Duck/Duck.com";
+import { Duck } from "@/components/Duck/Duck2.com";
 import { Tree } from "@/components/Tree/Tree.com";
 import { Grass } from "@/components/Grass/Grass.com";
 import { GameHud } from "@/components/GameHud/GameHud.com";

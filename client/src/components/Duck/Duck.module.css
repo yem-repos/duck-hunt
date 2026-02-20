@@ -3,12 +3,13 @@
     --tile-y: 0;
     --scale: 1;
     --frame: 0;
+    --dir: 1;
     width: 32px;
     height: 32px;
     position: absolute;
     top: calc(32px * var(--tile-y));
     left: calc(32px * var(--tile-x));
-    transform: scale(var(--scale));
+    transform: scale(var(--scale)) scaleX(var(--dir));
     background-image: url("/assets/images/duck.webp");
     background-repeat: no-repeat;
     background-position: calc(var(--frame) * -32px) 0;
